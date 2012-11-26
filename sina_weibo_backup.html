@@ -1,0 +1,1838 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head id="Head"><title>
+	[发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新] - CALL ME ALOONG ! ! ! - BlogJava
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta id="metaKeywords" name="keywords" content="[发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" /><link type="text/css" rel="stylesheet" href="/css/common.css" /><link id="MainCss" type="text/css" rel="stylesheet" href="http://www.blogjava.net/Skins/arrow/style.css" /><link id="SecondaryCss" type="text/css" rel="stylesheet" href="http://www.blogjava.net/jayslong/customcss.aspx" /><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.blogjava.net/jayslong/rss.aspx" /></head>
+<body>
+    <form name="Form1" method="post" action="sina_weibo_backup.html" id="Form1">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="" />
+
+<script language=JavaScript>
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</script>
+												<script language=JavaScript>function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</script>
+<script src="/ScriptResource.axd?d=PtGuClBXaxOQegVLnERn1GeaXjDaRdr4SvMqug5n9S2sUHOz3vjfHKDJkBgmdOF9z8-rTyjw0UThfRWbO4w_JxW_Nj2O6kPCb2Ooiysi9jbHzkCJ2UINFqXRPH41&amp;t=633065726440000000" type="text/javascript"></script>
+        <!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<script src="http://tuan.baidu.com/static/public/js/jquery-1.4.2.min.js"></script>
+<!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.blogjava.net/jayslong/"><span style="font-size: 24pt; ">CALL ME ALOONG ! ! !</span></a><br>
+		自己还不怎么会写东西,收藏夹里的才是精华.
+	</div>
+</div>
+
+</div>
+<div id="mylinks">
+<!--done-->
+&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_MyHomeLink" class="menu" href="http://www.blogjava.net/jayslong/">首页</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_NewPostLink" class="menu" href="http://www.blogjava.net/jayslong/admin/EditPosts.aspx?opt=1">新随笔</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_ContactLink" accesskey="9" class="menu" href="http://www.blogjava.net/jayslong/contact.aspx?id=1">联系</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_Syndication" class="menu" href="http://www.blogjava.net/jayslong/rss">聚合</a><a id="MyLinks1_XMLLink" href="http://www.blogjava.net/jayslong/rss"><img src="http://www.blogjava.net/images/xml.gif" border="0" /></a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_Admin" class="menu" href="http://www.blogjava.net/jayslong/admin/EditPosts.aspx">管理</a>
+</div>
+<div id="mytopmenu">
+	
+		
+<!--done-->
+<div class="blogStats">随笔 - 21&nbsp;
+文章 - 454&nbsp;
+trackbacks - 0
+
+</div> 
+	
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			<table id="Calendar1_entryCal" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0" style="border:0px">
+	<tr><td colspan="7" bgcolor="Transparent"><table class="CalTitle" cellspacing="0" border="0" width="100%">
+		<tr><td class="CalNextPrev" width="15%"><a href="javascript:__doPostBack('Calendar1$entryCal','V4657')" style="color:Black" title="Go to the previous month">&lt;</a></td><td align="center" width="70%">2012年11月</td><td class="CalNextPrev" align="right" width="15%"><a href="javascript:__doPostBack('Calendar1$entryCal','V4718')" style="color:Black" title="Go to the next month">&gt;</a></td></tr>
+	</table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center" width="14%">28</td><td class="CalOtherMonthDay" align="center" width="14%">29</td><td class="CalOtherMonthDay" align="center" width="14%">30</td><td class="CalOtherMonthDay" align="center" width="14%">31</td><td align="center" width="14%">1</td><td align="center" width="14%">2</td><td class="CalWeekendDay" align="center" width="14%">3</td></tr><tr><td class="CalWeekendDay" align="center" width="14%">4</td><td align="center" width="14%">5</td><td align="center" width="14%">6</td><td align="center" width="14%">7</td><td align="center" width="14%">8</td><td align="center" width="14%">9</td><td class="CalWeekendDay" align="center" width="14%">10</td></tr><tr><td class="CalWeekendDay" align="center" width="14%">11</td><td align="center" width="14%">12</td><td align="center" width="14%">13</td><td align="center" width="14%">14</td><td align="center" width="14%">15</td><td align="center" width="14%">16</td><td class="CalWeekendDay" align="center" width="14%">17</td></tr><tr><td class="CalWeekendDay" align="center" width="14%">18</td><td align="center" width="14%">19</td><td align="center" width="14%">20</td><td align="center" width="14%">21</td><td align="center" width="14%">22</td><td align="center" width="14%">23</td><td class="CalWeekendDay" align="center" width="14%">24</td></tr><tr><td class="CalWeekendDay" align="center" width="14%">25</td><td class="CalTodayDay" align="center" width="14%">26</td><td align="center" width="14%">27</td><td align="center" width="14%">28</td><td align="center" width="14%">29</td><td align="center" width="14%">30</td><td class="CalOtherMonthDay" align="center" width="14%">1</td></tr><tr><td class="CalOtherMonthDay" align="center" width="14%">2</td><td class="CalOtherMonthDay" align="center" width="14%">3</td><td class="CalOtherMonthDay" align="center" width="14%">4</td><td class="CalOtherMonthDay" align="center" width="14%">5</td><td class="CalOtherMonthDay" align="center" width="14%">6</td><td class="CalOtherMonthDay" align="center" width="14%">7</td><td class="CalOtherMonthDay" align="center" width="14%">8</td></tr>
+</table>
+<br>
+			
+			
+<h3>常用链接</h3>
+<ul>
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl01_lnkLinkItem" href="http://www.blogjava.net/jayslong/MyPosts.html">我的随笔</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl02_lnkLinkItem" href="http://www.blogjava.net/jayslong/MyArticles.html">我的文章</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl03_lnkLinkItem" href="http://www.blogjava.net/jayslong/MyComments.html">我的评论</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl04_lnkLinkItem" href="http://www.blogjava.net/jayslong/OtherPosts.html">我的参与</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl05_lnkLinkItem" href="http://www.blogjava.net/jayslong/RecentComments.html">最新评论</a></li>
+	</ul>
+<H3>留言簿<span style="font-size:11px;font-weight:normal;">(24)</span></H3>
+<ul>
+	<li>
+		<a id="SingleColumn1_ctl01_lnkMessages" href="http://www.blogjava.net/jayslong/Contact.aspx?id=1">给我留言</a>
+	<li>
+		<a id="SingleColumn1_ctl01_lnkPublicMsgView" href="http://www.blogjava.net/jayslong/default.aspx?opt=msg">查看公开留言</a>
+	<li>
+		<a id="SingleColumn1_ctl01_lnkPrivateMsgView" href="http://www.blogjava.net/jayslong/admin/MyMessages.aspx">查看私人留言</a>
+	</li>
+</ul>
+
+<H3>我参与的团队</H3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1_ctl02_TeamList_ctl01_lnkTeam" href="http://shenzhen.blogjava.net">深圳Java俱乐部(0/0)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<!--done-->
+
+		<h1 class = "catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(73)</span></h1>
+		
+				<ul class = "catList">
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48361.html">Android(6)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" title="Subscribe to Android(6)" class="listitem" href="http://www.blogjava.net/jayslong/category/48361.html/rss"><img title="Subscribe to Android(6)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48360.html">Java(11)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" title="Subscribe to Java(11)" class="listitem" href="http://www.blogjava.net/jayslong/category/48360.html/rss"><img title="Subscribe to Java(11)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48362.html">Js/JQuery/Ajax(4)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" title="Subscribe to Js/JQuery/Ajax(4)" class="listitem" href="http://www.blogjava.net/jayslong/category/48362.html/rss"><img title="Subscribe to Js/JQuery/Ajax(4)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48559.html">Linux(3)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" title="Subscribe to Linux(3)" class="listitem" href="http://www.blogjava.net/jayslong/category/48559.html/rss"><img title="Subscribe to Linux(3)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48364.html">Web(6)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" title="Subscribe to Web(6)" class="listitem" href="http://www.blogjava.net/jayslong/category/48364.html/rss"><img title="Subscribe to Web(6)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44811.html">其他技术(3)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink" title="Subscribe to 其他技术(3)" class="listitem" href="http://www.blogjava.net/jayslong/category/44811.html/rss"><img title="Subscribe to 其他技术(3)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48357.html">分享(21)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink" title="Subscribe to 分享(21)" class="listitem" href="http://www.blogjava.net/jayslong/category/48357.html/rss"><img title="Subscribe to 分享(21)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48359.html">发布(5)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink" title="Subscribe to 发布(5)" class="listitem" href="http://www.blogjava.net/jayslong/category/48359.html/rss"><img title="Subscribe to 发布(5)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44624.html">提问(1)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink" title="Subscribe to 提问(1)" class="listitem" href="http://www.blogjava.net/jayslong/category/44624.html/rss"><img title="Subscribe to 提问(1)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44331.html">日常(3)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink" title="Subscribe to 日常(3)" class="listitem" href="http://www.blogjava.net/jayslong/category/44331.html/rss"><img title="Subscribe to 日常(3)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48358.html">笔记(6)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink" title="Subscribe to 笔记(6)" class="listitem" href="http://www.blogjava.net/jayslong/category/48358.html/rss"><img title="Subscribe to 笔记(6)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44410.html">职业(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink" title="Subscribe to 职业(2)" class="listitem" href="http://www.blogjava.net/jayslong/category/44410.html/rss"><img title="Subscribe to 职业(2)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/48363.html">非技术(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink" title="Subscribe to 非技术(2)" class="listitem" href="http://www.blogjava.net/jayslong/category/48363.html/rss"><img title="Subscribe to 非技术(2)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "catListTitle">文章分类<span style="font-size:11px;font-weight:normal">(1)</span></h1>
+		
+				<ul class = "catList">
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/46740.html">Android</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink" title="Subscribe to Android" class="listitem" href="http://www.blogjava.net/jayslong/category/46740.html/rss"><img title="Subscribe to Android" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/46739.html">J2EE</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink" title="Subscribe to J2EE" class="listitem" href="http://www.blogjava.net/jayslong/category/46739.html/rss"><img title="Subscribe to J2EE" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/46738.html">Java</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink" title="Subscribe to Java" class="listitem" href="http://www.blogjava.net/jayslong/category/46738.html/rss"><img title="Subscribe to Java" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44329.html">作品发布</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink" title="Subscribe to 作品发布" class="listitem" href="http://www.blogjava.net/jayslong/category/44329.html/rss"><img title="Subscribe to 作品发布" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44825.html">简历存档(1)</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_RssLink" title="Subscribe to 简历存档(1)" class="listitem" href="http://www.blogjava.net/jayslong/category/44825.html/rss"><img title="Subscribe to 简历存档(1)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/44330.html">经验分享</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_RssLink" title="Subscribe to 经验分享" class="listitem" href="http://www.blogjava.net/jayslong/category/44330.html/rss"><img title="Subscribe to 经验分享" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" class="listitem" href="http://www.blogjava.net/jayslong/category/46741.html">软件工程</a><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_RssLink" title="Subscribe to 软件工程" class="listitem" href="http://www.blogjava.net/jayslong/category/46741.html/rss"><img title="Subscribe to 软件工程" src="/Images/xml.gif" border="0" /></a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "catListTitle">收藏夹<span style="font-size:11px;font-weight:normal">(277)</span></h1>
+		
+				<ul class = "catList">
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46683.html">Android(47)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink" title="Subscribe to Android(47)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46683.html/rss"><img title="Subscribe to Android(47)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46028.html">Flex(4)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink" title="Subscribe to Flex(4)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46028.html/rss"><img title="Subscribe to Flex(4)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44832.html">IDE(7)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink" title="Subscribe to IDE(7)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44832.html/rss"><img title="Subscribe to IDE(7)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44405.html">JavaEE(16)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_RssLink" title="Subscribe to JavaEE(16)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44405.html/rss"><img title="Subscribe to JavaEE(16)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44923.html">Java入门(4)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_RssLink" title="Subscribe to Java入门(4)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44923.html/rss"><img title="Subscribe to Java入门(4)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl06_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44363.html">Java基础(46)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl06_RssLink" title="Subscribe to Java基础(46)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44363.html/rss"><img title="Subscribe to Java基础(46)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl07_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/47215.html">JS/JQuery(12)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl07_RssLink" title="Subscribe to JS/JQuery(12)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/47215.html/rss"><img title="Subscribe to JS/JQuery(12)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl08_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46300.html">L/Unix(1)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl08_RssLink" title="Subscribe to L/Unix(1)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46300.html/rss"><img title="Subscribe to L/Unix(1)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl09_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44404.html">web应用(14)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl09_RssLink" title="Subscribe to web应用(14)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44404.html/rss"><img title="Subscribe to web应用(14)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl10_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44403.html">实用源码(45)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl10_RssLink" title="Subscribe to 实用源码(45)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44403.html/rss"><img title="Subscribe to 实用源码(45)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl11_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44396.html">成长之路(29)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl11_RssLink" title="Subscribe to 成长之路(29)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44396.html/rss"><img title="Subscribe to 成长之路(29)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl12_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44924.html">数据库(9)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl12_RssLink" title="Subscribe to 数据库(9)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44924.html/rss"><img title="Subscribe to 数据库(9)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl13_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/45636.html">求职面试(9)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl13_RssLink" title="Subscribe to 求职面试(9)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/45636.html/rss"><img title="Subscribe to 求职面试(9)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl14_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/48091.html">测试技术(3)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl14_RssLink" title="Subscribe to 测试技术(3)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/48091.html/rss"><img title="Subscribe to 测试技术(3)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl15_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/47146.html">系统架构(4)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl15_RssLink" title="Subscribe to 系统架构(4)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/47146.html/rss"><img title="Subscribe to 系统架构(4)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl16_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/45028.html">美工设计(3)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl16_RssLink" title="Subscribe to 美工设计(3)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/45028.html/rss"><img title="Subscribe to 美工设计(3)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl17_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44535.html">设计模式(9)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl17_RssLink" title="Subscribe to 设计模式(9)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44535.html/rss"><img title="Subscribe to 设计模式(9)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl18_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44364.html">软件工程(7)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl18_RssLink" title="Subscribe to 软件工程(7)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44364.html/rss"><img title="Subscribe to 软件工程(7)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl19_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46737.html">项目管理(3)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl19_RssLink" title="Subscribe to 项目管理(3)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/46737.html/rss"><img title="Subscribe to 项目管理(3)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl20_Link" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44681.html">高级技术(5)</a><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl20_RssLink" title="Subscribe to 高级技术(5)" class="listitem" href="http://www.blogjava.net/jayslong/favorite/44681.html/rss"><img title="Subscribe to 高级技术(5)" src="/Images/xml.gif" border="0" /></a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "catListTitle">在线工具</h1>
+		
+				<ul class = "catList">
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link" class="listitem" href="http://www.regextester.com/" target="_blank">在线正则校验</a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link" class="listitem" href="http://www.gliffy.com/" target="_blank">在线画流程图</a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "catListTitle">在线资料</h1>
+		
+				<ul class = "catList">
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link" class="listitem" href="http://ajava.org/online/index.html" target="_blank">AJava各种在线API</a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link" class="listitem" href="http://www.jarvana.com">Maven Repository Search</a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl03_Link" class="listitem" href="http://www.oschina.net/code/explore" target="_blank">OSChina在线源码库</a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl04_Link" class="listitem" href="http://www.java2s.com/" target="_blank">源码和实例</a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl05_Link" class="listitem" href="http://www.grepcode.com/" target="_blank">源码搜索聚合</a></li>
+			
+				<li class = "catListItem"> <a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl06_Link" class="listitem" href="https://uncontrolledsurfer.com/" target="_blank">越墙代理</a></li>
+			
+				</ul>
+			
+	
+
+
+<h3>最新随笔</h3>
+<div class="RecentComment">
+<ul style="word-break:break-all">
+	
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/08/22/fanfou_backup_js_script.html">1. 用一个js脚本备份饭否消息</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/12/10/jdk_tomcat_mysql_setting_up_for_jsp_in_linux_fedora.html">2. 在Fedora Linux上快速部署搭建JDK, Tomcat, MySQL的JSP开发演示环境流程记录教程.</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/10/16/qq_2012_offer_experience.html">3. 腾讯2012校园招聘面试面经,技术类,应用软件开发,Java,移动终端方向可参考.</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/17/how_to_modify_system_apps_in_android_source_code.html">4. 分享在Linux下编译Android源代码并修改调试系统自带应用的方法</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/12/fix_the_problem_that_android_source_code_wont_compile_in_ubuntu_11_04.html">5. 解决用 Ubuntu 11.04 编译 Android 源码时候出现的"field 'arch' has incomplete type"错误</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/11/java_and_javascript_interact_in_android_webview.html">6. Android中WebView载入本地HTML代码并实现Java与JavaScript交互的例子</a></li>
+		
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl05_RecentPostsList2_ctl01_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/11/root_android_emulator_to_push_file_into_system_folder.html">7. ROOT Android模拟器, push文件到system下文件夹权限和空间问题的解决.</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/27/jquery_reply_page_divide_and_ad_clear_in_blogjava.html">8. 分享用JQuery在BlogJava中实现评论的前端分页和清理广告的js代码.</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/21/embeded_flag_expressions_in_java_regex.html">9. java正则表达式中的Embeded Flag参数</a></li>
+		
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl07_RecentPostsList2_ctl01_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/21/convert_xls_and_xlsx_to_csv.html">10. 分享用Java将Excel的xls和xlsx文件转换成csv文件的方法, XLS2CSV, XLSX2CSV</a></li>
+		
+	
+</ul>
+</div>
+
+<script language="JavaScript">
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</script>
+<H3>搜索</H3>
+<ul>
+	<li>
+		<li><input style="WIDTH: 130px" type="text" name="q" id="q" onkeydown="return SearchGoogle(document.getElementById('q'),event,'www.blogjava.net/jayslong')">&nbsp;<input onclick="SearchGoogle(document.getElementById('q'),event,'www.blogjava.net/jayslong')" type="button" value="搜索" name="sa">
+	</li>
+</ul>
+
+<H3>积分与排名</H3>
+<ul>
+	<li>
+		积分 -
+		118192
+	<li>
+		排名 -
+		204
+	</li>
+</ul>
+
+<h3>最新评论
+	<a id="SingleColumn1__3e0022_RSSHyperlink1" href="http://www.blogjava.net/jayslong/CommentsRSS.aspx"><img src="/images/xml.gif" border="0" /></a></h3>
+<div class="RecentComment">
+	
+			<ul>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3e0022_CommentList_ctl01_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/11/26/338299.html#391948">1. re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]</a>
+			</li>
+			<li style="word-break:break-all">
+				楼主分享的代码很强大，希望楼主能够早日开发出备份私信的功能（按照每个私信联系人保存为一个文件），如果开发出来后能联系我就更好了，QQ：53152215，谢谢！祝楼主身体健康，快乐幸福！
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--雨哲</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3e0022_CommentList_ctl02_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/11/22/338299.html#391732">2. re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]</a>
+			</li>
+			<li style="word-break:break-all">
+				下载完 就停住了  然后 没有 下一步了
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--肯</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3e0022_CommentList_ctl03_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/10/08/348727.html#389196">3. re: 分享用Java将Excel的xls和xlsx文件转换成csv文件的方法, XLS2CSV, XLSX2CSV</a>
+			</li>
+			<li style="word-break:break-all">
+				那个架包的我看不懂，能不能给提供个架包的下载地址
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--宋磊</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3e0022_CommentList_ctl04_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/10/01/338299.html#388914">4. re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]</a>
+			</li>
+			<li style="word-break:break-all">
+				博主你好，<br>我想请问为啥登录不了捏？
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--test</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3e0022_CommentList_ctl05_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/09/16/348727.html#387833">5. re: 分享用Java将Excel的xls和xlsx文件转换成csv文件的方法, XLS2CSV, XLSX2CSV[未登录]</a>
+			</li>
+			<li style="word-break:break-all">
+				很好，但是对特殊字符没有处理，excel出现“”，就不好使了，单元格会往后移！
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--xxx</li>
+		
+			</ul>
+		
+</div>
+
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__22a265b_TopList_ctl01_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2010/11/17/338299.html">1. [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新](57478)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__22a265b_TopList_ctl02_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/11/350003.html">2. ROOT Android模拟器, push文件到system下文件夹权限和空间问题的解决.(4612)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__22a265b_TopList_ctl03_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/21/348727.html">3. 分享用Java将Excel的xls和xlsx文件转换成csv文件的方法, XLS2CSV, XLSX2CSV(4428)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__22a265b_TopList_ctl04_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2010/11/03/337178.html">4. 分享一个让QQ与360可以同时运行的小程序(4414)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__22a265b_TopList_ctl05_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/11/350036.html">5. Android中WebView载入本地HTML代码并实现Java与JavaScript交互的例子(4075)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__25763f4_TopList_ctl01_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2010/11/17/338299.html">1. [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新](396)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__25763f4_TopList_ctl02_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/03/12/346121.html">2. [发布]一个简单的博客批量下载收藏备份程序(支持新浪,blogbus,blogjava,csdn)多线程高速下载,导出多种格式[测试版](11)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__25763f4_TopList_ctl03_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/10/16/361365.html">3. 腾讯2012校园招聘面试面经,技术类,应用软件开发,Java,移动终端方向可参考.(9)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__25763f4_TopList_ctl04_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/03/25/347018.html">4. 分享我在BlogJava博客中加入Ajax动态效果的方法. --BlogJava是我见过国内最自由的BSP了!(8)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__25763f4_TopList_ctl05_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/21/348727.html">5. 分享用Java将Excel的xls和xlsx文件转换成csv文件的方法, XLS2CSV, XLSX2CSV(6)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+</DIV>		
+	
+</div>
+<div id="centercontent">
+	
+					
+<!--done-->
+<div class = "post">
+	<div class = "postTitle">
+		<a id="viewpost1_TitleUrl" class="postTitle2" href="http://www.blogjava.net/jayslong/archive/2010/11/17/sina_weibo_backup.html">[发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]</a>
+	</div>
+	<strong><span style="font-size: 14pt; font-family: Arial; ">因为新浪的限制太多了.这个软件我不继续更新了.<br />现在应该是不能用了,只能下载到50页的内容.<br />文章底下源码开放.有兴趣的朋友自取去参考开发吧..<br />
+<br />
+<br />
+<strike>因为</strike></span><strike><span style="font-size: 14pt; font-family: Arial; color: red; ">新浪</span><span style="font-size: 14pt; font-family: Arial; ">新出了一个</span><span style="font-size: 14pt; font-family: Arial; color: red; ">蛋疼的限制</span><span style="font-size: 14pt; font-family: Arial; ">,短时间内</span><span style="font-size: 14pt; font-family: Arial; color: red; ">大量访问</span><span style="font-size: 14pt; font-family: Arial; ">手机版页面</span><span style="font-size: 14pt; font-family: Arial; color: red; ">会被屏蔽</span><span style="font-size: 14pt; font-family: Arial; ">IP,所以如果你要备份的消息超过3000条的话,有可能出现不能完整备份的情况,</span></strike></strong><strike><strong><br />
+<span style="font-size: 14pt; font-family: Arial; ">
+可以考虑等我们想出了解决方案再来下载..当然欢迎试用,这个屏蔽并</span><span style="font-size: 14pt; font-family: Arial; color: red; ">不会影响你正常使用微博.</span><br />
+<span style="font-size: 14pt; font-family: Arial; ">
+也欢迎在这里或者微博上</span><span style="font-size: 14pt; font-family: Arial; color: red; ">告诉我</span><span style="font-size: 14pt; font-family: Arial; ">您备份到多少页的时候开始出错,</span><span style="font-size: 14pt; font-family: Arial; color: red; ">帮助我们找到屏蔽的规律.</span><br />
+<span style="font-size: 14pt; font-family: Arial; ">
+这个问题我除了先收集数据来分析,暂时还没有什么好的解决办法,<br />
+</span><span style="font-size: 14pt; font-family: Arial; color: red; ">请各位也帮我想想办法</span><span style="font-size: 14pt; font-family: Arial; ">哈~</span></strong><a onclick="toReply()"><strong><u style="font-size: 14pt; "><span style="color: #0000ff; font-family: Arial; ">留言</span></u><span style="font-size: 14pt; font-family: Arial; ">告诉我</span></strong><br />
+</a></strike><a onclick="toReply()">
+<br />
+<br />
+点击下载:</a><a style="font-family: " onclick="toReply()"> <span style="font-size: 18pt; "><span style="color: #0000ff; "></span></span></a><a href="http://goo.gl/eoY20" target="_blank"><span style="font-size: 18pt; "><span style="color: #0000ff; ">SinaWeiboBackup.rar</span></span></a><br />
+<span style="text-decoration: underline; color: #00ffff; font-size: 12pt; "><br />
+</span><span style="font-size: 10pt">备用地址<u>:<a href="http://www.blogjava.net/Files/jayslong/SinaWeiboBackup.rar"><span style="color: #0000ff"><span style="color: #0000ff"><u>SinaWeiboBackup.rar</u></span></span></a><br />
+</u></span>
+<p>&nbsp;</p>
+<br />
+<span style="font-size: 12pt">本程序为绿色软件,解压即可使用</span><br />
+<br />
+<span style="font-size: 12pt">源代码已经在文末提供下载了.担心安全问题的可以去看看..</span><br />
+<br />
+<span style="color: red; font-size: 12pt">不是通过API,所以</span><span style="color: red; font-size: 12pt"><strong>没有200条消息的限制</strong>!<br />
+</span><span style="color: red; font-size: 12pt"><br />
+</span><br />
+<span style="font-size: 10pt">-----------------------------------------------------------------</span><br />
+<p><u>更新说明: (下载链接和源码已更新为最新版)<br />
+</u><span style="font-size: 12pt"><span style="font-size: 12pt"><br />
+</span></span></p>
+<div><span style="font-size: 12pt; ">----------2011-09-30 V2.7----------
+<div><span style="font-size: 24px; ">
+<div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; ">
+<div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "><span style="font-size: 10pt; "></span></div>
+<div>
+<div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "><span style="font-size: 12pt; ">*修复了因为新浪更改页面导致无法下载图片的问题</span></div>
+<div><span style="font-size: 12pt; ">*增加了询问是否关注作者微博的提示<br />
+<br />
+</span></div>
+</div>
+<div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "><span style="font-size: 10pt; "></span></div>
+</div>
+</span></div>
+----------2011-09-22 V2.5----------<br />
+</span>
+<div>
+<div><span style="font-size: 10pt; ">*</span><span style="color: red; font-size: 10pt; ">增加下载全部图片到本地的功能</span></div>
+<div><span style="font-size: 10pt; ">*本地图片与HTML导出格式关联</span></div>
+<div><span style="font-size: 10pt; ">*导出文件后自动打开文件夹</span><span style="font-size: 12pt; "><br />
+</span></div>
+</div>
+</div>
+<span style="font-size: 12pt"><span style="font-size: 10pt"><span style="font-size: 12pt"><span style="font-size: 10pt"><span style="font-size: 10pt; ">----------2011-07-11 V2.4----------<br />
+</span><span style="font-size: 10pt; ">*修复备份其他用户消息失败的问题</span><br />
+</span></span><span style="font-size: 10pt; ">----------2011-07-07 V2.3----------<br />
+</span><span style="font-size: 10pt; ">*修复因为新浪修改页面导致不能登</span><span style="font-size: 10pt; ">录的问题</span><br />
+----------2011-06-15 V2.2----------<br />
+</span><span style="font-size: 10pt">*修复因为新浪修改页面导致不能登录的问题</span><br />
+<span style="font-size: 10pt">*提供了备份好友消息不&#64;该好友的选项</span><br />
+<span style="font-size: 10pt">*修复了10年11月之前图片不能显示的问题</span></span><span style="font-size: 10pt"><br />
+----------2011-06-05 V2.1----------</span><br />
+<span style="color: #ff0000"><span style="font-size: 12pt"><span style="color: #000000; font-size: 10pt">*修复丢失大量消息的用户备份无法完成的问</span><span style="color: #000000; font-size: 12pt">题.<br />
+</span></span></span><span style="font-size: 10pt">----------2011-05-26 V2.0----------<br />
+</span><span style="color: #ff0000; font-size: 10pt">***增加了备份任意用户微博的功能!</span><br />
+<span style="font-size: 10pt">**修改了界面,提高了稳定性</span><br />
+<span style="font-size: 10pt">*修复了CSV格式乱码的问题</span><br />
+<span style="font-size: 10pt">*增加了统计的小功能<br />
+</span><span style="font-size: 10pt">*取消了导入饭否的计划</span><span style="color: #ff0000; font-size: 10pt"><br />
+</span><span style="font-size: 8pt">----------2011-05-13 V1.5----------</span><br />
+<span style="color: #ff0000"><span style="font-size: 12pt"><span style="color: #000000; font-size: 8pt">*修复因为新浪页面变动导致页面抓取失败的问题.<br />
+</span><span style="color: #000000; font-size: 8pt">*优化了一些流程更好支持繁体版</span><span style="color: #ff0000"><br />
+</span></span></span><span style="font-size: 8pt">----------2011-05-02 V1.4----------<br />
+</span><span style="color: #000000; font-size: 8pt">*修复因为新浪页面变动导致页面抓取失败的问题.<br />
+</span><span style="font-size: 8pt">----------2011-04-27 V1.3.1----------<br />
+</span><span style="font-size: 8pt">*仅改变了备份完成后自动推送的消息内容,防止该消息被新浪搜索屏蔽<br />
+</span><span style="font-size: 8pt">----------2011-04-06 V1.3----------<br />
+</span><span style="font-size: 8pt"><span style="color: red"><span style="color: #000000; font-size: 8pt">*修复了因为用户设置默认不显示图片或默认繁体中文界面<br />
+</span><span style="color: #000000; font-size: 8pt">&nbsp; 导致无法显示图片或页面无法下载的问题</span></span><br />
+</span><span style="font-size: 8pt">----------2010-11-30 V1.2----------<br />
+</span><span style="font-size: 8pt">*修复了在非简体中文系统下导出文件为乱码的问题<br />
+</span><span style="font-size: 8pt">----------2010-11-22 V1.1----------<br />
+</span><span style="font-size: 8pt">*修复了纯数字帐号读写数据库异常<br />
+</span><span style="font-size: 8pt">*修复了用户消息不超过一页时无法获取的问题<br />
+</span><span style="font-size: 8pt">*修复了下载失</span><span style="font-size: 8pt">败后按钮不能恢复的问题</span>&nbsp;<br />
+<p>&nbsp;</p>
+<p>---------------------使用方法说明---------------------------</p>
+<p><span style="font-size: 12pt"><span style="font-size: 12pt">请先尝试直接运行"<span style="color: red">SinaWeiboBackup.jar</span>"文件</span></span></p>
+<p><span style="font-size: 12pt"><span style="font-size: 12pt">如果双击jar文件之后无法运行而是自动用解压软件打开,<br />
+请先解压出来后尝试双击"<span style="color: red">启动.bat</span>"来运行</span></span></p>
+<p><span style="font-size: 12pt"><span style="font-size: 12pt">如果以上两个方法皆无法运行程序<br />
+这说明你的电脑缺少java的运行环境<br />
+请到以下地址下载jre</span></span></p>
+<p><span style="font-size: 12pt"><span style="font-size: 12pt"><span style="color: #0000ff"><span style="font-size: 12pt"><a href="http://www.java.com/zh_CN/" target="_blank"><span style="font-size: 14pt">http://www.java.com/zh_CN/</span></a><a href="http://www.java.com/zh_CN/" target="_blank"><br />
+</a></span></span></span><br />
+</span><span style="font-size: 12pt"><span style="font-size: 12pt">安装后就可以运行本程序了..<br />
+</span></span><br />
+64位的windows系统如果无法导出,请尝试解压下面这个sqlite_jni.dll<br />
+替换第一次运行后生成的同名文件: <a href="/Files/jayslong/sqlite_jni.rar">sqlite_jni.rar</a><br />
+<br />
+<span style="font-size: 18pt"><span style="font-family: 楷体_GB2312"><span style="background-color: yellow; font-family: ; font-size: 18pt">有任何问题请 <a style="font-family: " onclick="toReply()"><u><strong style="color: #0000ff">留言</strong></u></a> 告诉我!<br />
+</span></span><br />
+</span>-----------------------------------------------------------------<br />
+<br />
+<span style="font-size: 12pt">以下是一些详细说明和截图:<br />
+<br />
+1. 选择数据文件保存位置,要备份自己的消息输入用户名密码按下载即可,要下载别人的消息先选上那个小勾,然后写下要备份的人的名字,按下载~(图片里拿人气王做个例子哈)<br />
+<br />
+<img border="0" alt="" src="/images/blogjava_net/jayslong/weibo201.jpg" width="820" height="310" /><br />
+<br />
+</span><span style="font-size: 12pt">2. 下载过程中的提示,请耐心等待,画面中可能会出现报错,但都会自动重试,不必担心.<br />
+<br />
+<img border="0" alt="" src="/images/blogjava_net/jayslong/weibo2020.jpg" /><br />
+<br />
+3. 下载完成后会有一些统计信息, 需要导出数据请按导出按钮~<br />
+(关于离奇失踪消息的说明: 这些消息是在微博上看不到的,可能是因为一些不为人知或者广为人知的原因被系统或者什么人删除或者屏蔽. 这些消息计算在用户的消息数量里,但就是看不到,这也就是软件备份出来的消息数量和您页面上显示的数量有些许差别的原因~)<br />
+<br />
+<img border="0" alt="" src="/images/blogjava_net/jayslong/weibo203.jpg" /><br />
+<br />
+</span><br />
+<span style="font-size: 12pt">3.下载完成后可以导出, 导出的时候可以选择消息排序方式和导出的格式,<br />
+<br />
+&nbsp;&nbsp; 消息很多的时候推荐选择: 分页的html格式, 包含了翻页按钮, 并且显示消息中包含的图片<br />
+&nbsp;&nbsp;<span style="background-color: yellow">&nbsp;保存所有图片的方法:选择html格式导出之前,点击"下载图片"按钮,即可把图片都保存下来(新版的功能,下面的截图中没有这个按钮)<br />
+</span></span><br />
+<img border="0" alt="" src="/images/blogjava_net/jayslong/weibo204.jpg" /><br />
+<br />
+(如果上面的数据库位置指定到一个已经有备份过内容的.db文件,可以直接输入用户名并按导出,无需再次下载)<br />
+&nbsp;&nbsp; 导出成功可以返回到上一页输入另外的帐号继续进行导出.<br />
+<span style="font-size: 12pt"><br />
+4. 到自己选定的位置找到导出后的文件,文件名为你填写的帐号,分页的HTML会有编号,没有编号的那个文件是第一页.<br />
+</span><br />
+<img border="0" alt="" src="/images/blogjava_net/jayslong/weibo205.jpg" /><br />
+<br />
+5. 导出为HTML格式后的样子<br />
+<br />
+<img border="0" alt="" src="/images/blogjava_net/jayslong/weibo206.jpg" width="438" height="522" /><br />
+<br />
+<br />
+程序中使用了apache的httpClient包,还有使用了jni的SQLite的jdbc包...主要就是用正则表达式抓新浪的页面...<br />
+<br />
+<!--分享 --><!--Passit BUTTON BEGIN-->
+<script type="text/javascript">
+bookmark_service_div="baidu,qqxy,baiduHi,qq,kxzt,mop,douban,msn,bookmark,more";
+bookmark_service="sinaweibo,163weibo,sohuweibo,qqweibo,fanfou,xnzt,qqkj,twitter,facebook,more";</script></p>
+<div class="passit_barDiv"><a class="passit_default" href="http://www.passit.cn/bookmark.html" target="_blank"></a></div>
+<script type="text/javascript">
+var passit_title = "";//自定义分享标题，删除和留空表示使用默认
+var passit_url = "";//自定义分享网址，删除和留空表示使用默认
+var passit_content= "";//自定义分享内容，删除和留空表示使用默认
+</script><script type="text/javascript" src="http://www.passit.cn/js/passit_bar_big_new.js?pub=5783&simple=1" charset="UTF-8"></script><!--Passit BUTTON END--><span style="font-size: 12pt"><br />
+<strike><br />
+</strike>-------------------- <strong>关于安全性的说明</strong> -------------------<br />
+*这个程序为什么需要您的密码,因为微博的消息需要登录才能完整查看,如果我用一个公共的帐号为大家备份,很容易这个帐号会被封,如果大家用各自的帐号,也就没有被封的风险. <br />
+*为什么不能像其他应用一样通过新浪的网页登陆认证?因为那种方式认证只能调用新浪提供的API接口,而新浪官方接口只提供最近200条消息查询,无法做到全部备份.<br />
+*这个程序不会保存您的密码,它只会在下载完您的消息之后"顺便"在您的页面上发布一条消息,让更多人知道这个软件而已,不愿意分享的请随意删除.<br />
+*不放心的朋友请不要使用,序员们有兴趣的可以看看下面的源码,自己编译更放心吧~<br />
+<br />
+<br />
+下面是源代码包:<a title="WeiboBackupSrc.rar" href="/Files/jayslong/WeiboBackupSrc.rar"><u>WeiboBackupSrc.rar</u></a><br />
+</span>&nbsp;已更新为最新版本2011-09-30 
+	<div class = "postDesc">posted on 2010-11-17 19:17 <a href='http://www.blogjava.net/jayslong/'>Aloong</a> 阅读(57478) <a href='#Post'>评论(396)</a> &nbsp;<a href="http://www.blogjava.net/jayslong/admin/EditPosts.aspx?postid=338299">编辑</a> &nbsp;<a href="http://www.blogjava.net/jayslong/AddToFavorite.aspx?id=338299">收藏</a>  所属分类: <a href='http://www.blogjava.net/jayslong/category/48357.html'>分享</a> 、<a href='http://www.blogjava.net/jayslong/category/48359.html'>发布</a> 、<a href='http://www.blogjava.net/jayslong/category/48360.html'>Java</a> </div>
+</div>
+<img src ="http://www.blogjava.net/jayslong/aggbug/338299.html?webview=1" width = "1" height = "1" />
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.blogjava.net/jayslong/archive/2010/11/17/sina_weibo_backup.html"
+dc:identifier="http://www.blogjava.net/jayslong/archive/2010/11/17/sina_weibo_backup.html"
+dc:title="[发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]"
+trackback:ping="http://www.blogjava.net/jayslong/services/trackbacks/338299.aspx" />
+</rdf:RDF>
+-->
+
+
+<div id="AjaxHolder_UpdatePanel1">
+	    
+    <a name="pagedcomment"></a><div id="AjaxHolder_Comments_TopPager" style="text-align:right;margin-right:10px;margin-top:10px;"><style>.pager { text-align:right;	}</style><div class="pager">
+		评论共4页:&nbsp;1&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=2#pagedcomment">2</a>&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=3#pagedcomment">3</a>&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=4#pagedcomment">4</a>&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=2#pagedcomment">下一页</a>&nbsp;
+	</div></div>
+<!--done-->
+<br>
+<b>FeedBack:</b>
+<div class="feedbackNoItems"></div>
+	
+
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359803">#</a>&nbsp;<a name="359803"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-29 18:09&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl00_NameLink" target="_blank">白小狮</a></div>
+				<div align=left>下载下来的微博都不含图片。。。“还有(0)条带有图片!”<br>图片很重要啊，哭~~<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;白小狮&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%99%bd%e5%b0%8f%e7%8b%ae" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl00_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl00$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl00_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359805">#</a>&nbsp;<a name="359805"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-29 19:38&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl01_NameLink" target="_blank">sor</a></div>
+				<div align=left>确实不含图片。。。<br>显示“还有(0)条带有图片!”&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;sor&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=sor" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl01_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl01$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl01_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359806">#</a>&nbsp;<a name="359806"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-29 19:39&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl02_NameLink" target="_blank">sor</a></div>
+				<div align=left>关于这个，我看了，设置没有问题。【建议登录<a href="http://t.sina.cn" target="_new" rel="nofollow">http://t.sina.cn</a> 看看,把显示模式设置成可以看到[原图]链接的,应该就可以了,后面的版本会处理这个问题.  】&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;sor&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=sor" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl02_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl02$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl02_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359807">#</a>&nbsp;<a name="359807"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-29 19:42&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl03_NameLink" target="_blank">sor</a></div>
+				<div align=left>经测试，备份好友和自己的微博，都无法备份到图片。<br>我以为是因为自己微薄是旧版的原因，升级到新版依旧如此&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;sor&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=sor" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl03_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl03$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl03_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359810">#</a>&nbsp;<a name="359810"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-29 20:23&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl04_NameLink" target="_blank">gsh</a></div>
+				<div align=left>我的也是，设置都没问题，死活下载不了图片&#64;sor<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;gsh&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=gsh" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl04_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl04$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl04_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359868">#</a>&nbsp;<a name="359868"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-30 16:59&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl05_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;土豆炒马铃薯<br>&#64;白小狮<br>&#64;sor<br>&#64;gsh<br>是因为新浪页面上的图片地址从静态的变成了动态的..在我发布之后马上就改了,也不知道是故意的还是凑巧.<br>新版本里面修复了这个问题了..试试看吧..&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl05_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl05$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl05_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359877">#</a>&nbsp;<a name="359877"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-09-30 20:38&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl06_NameLink" target="_blank">gsh</a></div>
+				<div align=left>新版本试了，可以了，非常感谢！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;gsh&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=gsh" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl06_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl06$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl06_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359919">#</a>&nbsp;<a name="359919"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-02 10:15&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl07_NameLink" target="_blank">Mua</a></div>
+				<div align=left>如果是选择保存图片的话，我发现微博图片 文件夹里面会有一个fProxy.php文件，里面有一行文字这样说的，<br>------------<br>图片大小为2.1M,确认打开? <br>打开操作将按照图片大小扣除相应上网流量;较大的图片打开时间会比较长.<br>确认 取消<br>------------<br>然后这个GIF文件就冇保存了。<br>希望能改进一下咯？<br><br>对了不知道会不会有评论、&#64;s、收藏被备份功能呢？<br>如果有打算，大约什么时候出呢？<br><br>谢谢。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Mua&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Mua" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl07_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl07$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl07_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#359996">#</a>&nbsp;<a name="359996"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-04 13:01&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl08_NameLink" target="_blank">anja</a></div>
+				<div align=left>是啊 希望有导出收藏和评论的功能&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;anja&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=anja" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl08_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl08$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl08_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#360017">#</a>&nbsp;<a name="360017"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-04 21:30&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl09_NameLink" target="_blank">hongkong</a></div>
+				<div align=left>win 7 64位，使用后可以登录。也可以分析出 有多少页面，但是下载完后没有反应。下载和导出的按钮也一直是灰色的。程序没有死。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;hongkong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=hongkong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl09_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl09$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl09_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#360231">#</a>&nbsp;<a name="360231"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-08 23:50&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl10_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;Mua<br>谢谢提醒!这个是个bug,更新得急没有好好认真测试..没有留意到下载大图片的时候新浪还会有这样的提示,下个版本会修复好..评论的备份暂时没有在计划内,收藏估计会先实现,然后应该是私信,具体时间不定,因为最近比较忙参加各种校园招聘.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl10_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl10$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl10_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#360232">#</a>&nbsp;<a name="360232"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-08 23:52&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl11_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;hongkong<br>请看说明,更换一下sqlite_jni.dll,如果已经替换过了,可以尝试一下不替换使用默认的.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl11_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl11$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl11_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#360340">#</a>&nbsp;<a name="360340"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-10 08:44&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl12_NameLink" target="_blank">gsh</a></div>
+				<div align=left>你好，下载图片和导出html文件后，如果将这些内容移动其他文件夹目录下，好像点击html文件后，图片就无法显示，好像找不到图片了，请帮忙确认是否如此？谢谢。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;gsh&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=gsh" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl12_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl12$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl12_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361053">#</a>&nbsp;<a name="361053"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-12 15:27&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl13_NameLink" href="http://ssdfdsf" target="_blank">sdfsdf</a></div>
+				<div align=left>http和Sqlite用什么版本的. jar包能不能给份<br>maolongxing#126.com&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;sdfsdf&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=sdfsdf" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl13_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl13$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl13_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361172">#</a>&nbsp;<a name="361172"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2011-10-13 16:52&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl14_NameLink" href="http://luosi.sinaapp.com" target="_blank">ROSE</a></div>
+				<div align=left>能不能不保存图片的前提下<br><br>也得到真正的图片地址(已图片格式结尾)<br><br>直接存为html以后，图片链接都需要点击一下 才能得到真正的图片地址。<br><br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;ROSE&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=ROSE" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl14_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl14$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl14_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361199">#</a>&nbsp;<a name="361199"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-13 20:35&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl15_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;gsh<br>确实如此,要拷贝请连同目录结构一起拷贝.<br>或者你也可以把图片文件夹移出,再点击导出,此时导出的是图片的网络链接.可以单文件联网查看.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl15_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl15$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl15_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361200">#</a>&nbsp;<a name="361200"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-13 20:36&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl16_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;ROSE<br>实际上是可以的,下载图片的时候就有这一步,但是这样每次遇到图片要多访问一个链接,会导致下载过程变长..&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl16_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl16$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl16_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361201">#</a>&nbsp;<a name="361201"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-13 20:40&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl17_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;sdfsdf<br>已发请查收&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl17_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl17$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl17_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361209">#</a>&nbsp;<a name="361209"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2011-10-13 22:54&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl18_NameLink" target="_blank">fly</a></div>
+				<div align=left>今天刚下载了，但是仍然无法备份图片，界面上没有你提及的按钮，求解！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;fly&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=fly" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl18_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl18$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl18_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#361311">#</a>&nbsp;<a name="361311"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-10-14 19:47&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl19_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;fly<br>1, 请问你是在哪里下载的?<br>2, 那个下载图片的按钮在导出的界面上.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl19_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl19$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl19_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#362482">#</a>&nbsp;<a name="362482"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-01 22:32&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl20_NameLink" target="_blank">pb</a></div>
+				<div align=left>可以备份私信吗？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;pb&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=pb" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl20_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl20$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl20_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#362914">#</a>&nbsp;<a name="362914"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-06 19:15&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl21_NameLink" target="_blank">嘟嘟啦</a></div>
+				<div align=left>备份收藏的功能有没有？<br><br>自己发的内容还没有收藏的内容有营养。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;嘟嘟啦&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%98%9f%e5%98%9f%e5%95%a6" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl21_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl21$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl21_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363332">#</a>&nbsp;<a name="363332"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-09 20:15&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl22_NameLink" target="_blank">CPU</a></div>
+				<div align=left>安全问题比较令人堪忧&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;CPU&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=CPU" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl22_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl22$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl22_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363399">#</a>&nbsp;<a name="363399"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-10 11:45&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl23_NameLink" target="_blank">TZ</a></div>
+				<div align=left>请问可以导出私信吗？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;TZ&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=TZ" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl23_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl23$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl23_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363471">#</a>&nbsp;<a name="363471"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-10 21:29&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl24_NameLink" href="http://weibo.com/17068322" target="_blank">铺路石子</a></div>
+				<div align=left>为什么下载的时候有很下载不了，大约有1100条没下载下来。只下载到2011-02-17 12:21:00，之前的都没下载到。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;铺路石子&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e9%93%ba%e8%b7%af%e7%9f%b3%e5%ad%90" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl24_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl24$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl24_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363569">#</a>&nbsp;<a name="363569"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-12 10:32&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl25_NameLink" target="_blank">maybeland</a></div>
+				<div align=left>200页之后的就全都报错并跳过了，这是为何？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;maybeland&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=maybeland" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl25_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl25$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl25_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363604">#</a>&nbsp;<a name="363604"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-13 09:32&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl26_NameLink" target="_blank">chendefu</a></div>
+				<div align=left>希望可以增加导出评论以及私信的功能，这么棒的软件，多谢了。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;chendefu&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=chendefu" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl26_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl26$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl26_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363912">#</a>&nbsp;<a name="363912"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-16 01:58&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl27_NameLink" href="http://www.weibo.com/mmsquare" target="_blank">mmsquare</a></div>
+				<div align=left>&#64;Aloong<br>楼主，我也试了很多次，email地址/昵称/网页后缀都试过了，但是还是“用户名或者密码错误”。<br>有什么提示吗？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;mmsquare&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=mmsquare" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl27_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl27$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl27_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363965">#</a>&nbsp;<a name="363965"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-16 14:21&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl28_NameLink" href="http://www.weibo.com/mmsquare" target="_blank">mmsquare</a></div>
+				<div align=left>&#64;Aloong<br>楼主，我也试了很多次，email地址/昵称/网页后缀都试过了，但是还是“用户名或者密码错误”。<br><br>我在国外，这个有关系吗？用的是英文win7 64bit。不过locale用的是中文。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;mmsquare&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=mmsquare" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl28_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl28$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl28_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#363985">#</a>&nbsp;<a name="363985"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-16 18:16&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl29_NameLink" target="_blank">yiqing</a></div>
+				<div align=left>点击下载图片，总是显示“没有找到可以下载的图片地址! ”是怎么回事啊&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;yiqing&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=yiqing" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl29_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl29$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl29_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#364724">#</a>&nbsp;<a name="364724"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-24 13:54&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl30_NameLink" href="http://www.blogjava.net/zlb824/" target="_blank">52Java</a></div>
+				<div align=left>我下了你的这个软件，也看了源代码，确实够牛的哈！但是，当设计到代理服务器时，你这个就运行不了。呵呵……这个只是我这种菜鸟级别的一点想法。我还得继续想你学习呢！嘿嘿&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;52Java&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=52Java" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl30_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl30$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl30_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#364866">#</a>&nbsp;<a name="364866"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-26 00:00&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl31_NameLink" target="_blank">figo</a></div>
+				<div align=left>大神能不能备份别人的评论啊，不是别人对自己的评论<br>比如所有某人说过的话，回复，评论<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;figo&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=figo" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl31_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl31$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl31_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#364867">#</a>&nbsp;<a name="364867"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-11-26 00:01&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl32_NameLink" target="_blank">figo</a></div>
+				<div align=left>因为很多真知灼见就在评论里，so...&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;figo&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=figo" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl32_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl32$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl32_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#365481">#</a>&nbsp;<a name="365481"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-03 22:15&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl33_NameLink" target="_blank">gkon</a></div>
+				<div align=left>感谢你的贡献&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;gkon&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=gkon" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl33_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl33$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl33_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#365547">#</a>&nbsp;<a name="365547"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2011-12-05 10:26&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl34_NameLink" target="_blank">sun</a></div>
+				<div align=left>收藏的微薄可以备份么？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;sun&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=sun" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl34_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl34$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl34_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#365825">#</a>&nbsp;<a name="365825"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-08 01:33&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl35_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;mmsquare<br>建议你换一台电脑试试,我这里暂时没有这样的环境可以测试&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl35_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl35$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl35_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#365826">#</a>&nbsp;<a name="365826"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-08 01:35&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl36_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;铺路石子<br>&#64;maybeland<br>微博上这段时间也有很多人向我反应这个问题,在这里统一解释一下:<br>因为新浪新出了一个蛋疼的限制,短时间内大量访问手机版页面会被屏蔽IP,所以如果你要备份的消息超过3000条的话,有可能出现不能完整备份的情况,<br>可以考虑等我们想出了解决方案再来下载..当然欢迎试用,这个屏蔽并不会影响你正常使用微博.<br>也欢迎在这里或者微博上告诉我您备份到多少页的时候开始出错,帮助我们找到屏蔽的规律.<br>这个问题我除了先收集数据来分析,暂时还没有什么好的解决办法,<br>请各位也帮我想想办法哈~留言告诉我&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl36_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl36$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl36_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#365827">#</a>&nbsp;<a name="365827"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-08 01:37&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl37_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>&#64;52Java<br>说到代理服务器,理论上是可以实现的,因为里面用到的httpclient是支持配置代理服务器的.只是一开始感觉需求不多就没有做进界面.或许这个可以是一个避免屏蔽的方法哦!&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl37_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl37$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl37_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#365828">#</a>&nbsp;<a name="365828"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-08 01:40&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl38_NameLink" href="http://www.blogjava.net/jayslong/" target="_blank">Aloong</a></div>
+				<div align=left>关于提需求的各位,也统一回复一下,<br>我的计划一直是先支持备份收藏,其次私信,还有好友关系..最后才是评论(基本不打算备份评论).,但是现在的首要问题是解决屏蔽了..需求暂时要hold住..&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Aloong&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Aloong" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl38_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl38$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl38_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#366065">#</a>&nbsp;<a name="366065"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-10 21:41&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl39_NameLink" href="http://www.100mbuy.com" target="_blank">tbw淘宝</a></div>
+				<div align=left>hao 热闹的文章。支持下。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;tbw淘宝&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=tbw%e6%b7%98%e5%ae%9d" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl39_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl39$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl39_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#366292">#</a>&nbsp;<a name="366292"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2011-12-13 20:51&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl40_NameLink" href="http://%e9%82%ae%e7%ae%b1%ef%bc%9asoulxj2009@gmail.com" target="_blank">小罗</a></div>
+				<div align=left>此工具不断提示如下错误：<br><br>网络连接错误..请检查网络连接.<br><a href="http://t.sina.cn/dpool/ttt/home.php?cat=1&amp;page=1&amp;mp=1&amp;gsid=" target="_new" rel="nofollow">http://t.sina.cn/dpool/ttt/home.php?cat=1&amp;page=1&amp;mp=1&amp;gsid=</a><br>null<br><br>请问如何解决？<br><br>PS：是在公司电脑上使用，公司网络设有代理服务器。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;小罗&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%b0%8f%e7%bd%97" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl40_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl40$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl40_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#366466">#</a>&nbsp;<a name="366466"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2011-12-15 19:30&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl41_NameLink" href="http://123" target="_blank">123</a></div>
+				<div align=left>现在软件不能使用啊&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;123&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=123" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl41_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl41$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl41_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#366474">#</a>&nbsp;<a name="366474"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-15 23:21&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl42_NameLink" target="_blank">烟天青风</a></div>
+				<div align=left>从250页开始“下载失败”或者“完全失踪，自动跳过”，然后一直持续，疑似进入死循环（新浪围脖网页版我有294页围脖）&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;烟天青风&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%83%9f%e5%a4%a9%e9%9d%92%e9%a3%8e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl42_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl42$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl42_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#366610">#</a>&nbsp;<a name="366610"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-17 13:50&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl43_NameLink" target="_blank">MissWhY_插科打诨吐槽讽刺</a></div>
+				<div align=left>这一次备份的内容在下一次要备份新的内容时会不会重复备份呢？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;MissWhY_插科打诨吐槽讽刺&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=MissWhY_%e6%8f%92%e7%a7%91%e6%89%93%e8%af%a8%e5%90%90%e6%a7%bd%e8%ae%bd%e5%88%ba" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl43_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl43$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl43_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#366977">#</a>&nbsp;<a name="366977"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-22 08:52&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl44_NameLink" target="_blank">全智</a></div>
+				<div align=left>在win7 64系统里使用，软件打开时乱码，下载第536页时，无法操作怎样点都没反应。关闭后重新打开又要再重新填帐号（是否可记录用户名）。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;全智&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%85%a8%e6%99%ba" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl44_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl44$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl44_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367093">#</a>&nbsp;<a name="367093"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-23 22:04&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl45_NameLink" target="_blank">VVVVV</a></div>
+				<div align=left>未来能不能增加分日期段导出呢，这样一段时间以后备份就不需要重新备份已经备份过的了。另外，期待支持导出收藏 <br><br>加油ヽ(*&#180;∀｀)八(&#180;∀｀*)ノ&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;VVVVV&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=VVVVV" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl45_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl45$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl45_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367409">#</a>&nbsp;<a name="367409"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2011-12-28 14:32&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl46_NameLink" target="_blank">weijin</a></div>
+				<div align=left>总是停在“写入完成第XX页”一动也不动，咋回事？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;weijin&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=weijin" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl46_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl46$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl46_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367691">#</a>&nbsp;<a name="367691"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-01 11:25&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl47_NameLink" target="_blank">CN</a></div>
+				<div align=left>写入到50页。<br>就S了。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;CN&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=CN" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl47_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl47$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl47_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367702">#</a>&nbsp;<a name="367702"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-01 18:03&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl48_NameLink" href="http://8344" target="_blank">8344</a></div>
+				<div align=left>&#64;CN<br><br>写入到50页后停止。<br><br>烂软件。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;8344&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=8344" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl48_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl48$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl48_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367716">#</a>&nbsp;<a name="367716"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-02 10:49&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl49_NameLink" target="_blank">托哥-tony</a></div>
+				<div align=left>v2.7 &#64;CN<br>1. V2.7 2011-9-30版，下载到50页时无任何反映。<br>2. 重新下载新的RAR到新的目录，效果同上。<br><br>楼上也有网友遇到相同问题，谢谢楼主能抽空更新。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;托哥-tony&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e6%89%98%e5%93%a5-tony" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl49_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl49$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl49_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367903">#</a>&nbsp;<a name="367903"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-05 13:40&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl50_NameLink" target="_blank">bleedingorange</a></div>
+				<div align=left>你好，关于3000条限制的问题，技术盲想象，在解决这个问题之前，是不是可以添加分段备份的功能，比如某日到某日的一个时间段，或者按微博发布顺序3000条3000条分开来备份？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;bleedingorange&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=bleedingorange" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl50_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl50$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl50_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#367977">#</a>&nbsp;<a name="367977"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-06 09:31&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl51_NameLink" target="_blank">黄</a></div>
+				<div align=left>您好，我用您的2.7备份到100页就停住不动了。用的win7旗舰系统。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;黄&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e9%bb%84" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl51_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl51$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl51_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368047">#</a>&nbsp;<a name="368047"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-07 02:08&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl52_NameLink" target="_blank">开工</a></div>
+				<div align=left>我也是，50页，就不动了。&#64;weijin<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;开工&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%bc%80%e5%b7%a5" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl52_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl52$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl52_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368123">#</a>&nbsp;<a name="368123"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-09 11:04&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl53_NameLink" target="_blank">全智</a></div>
+				<div align=left>我也是，50页，就不动了~~~求解决~&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;全智&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%85%a8%e6%99%ba" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl53_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl53$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl53_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368175">#</a>&nbsp;<a name="368175"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-09 23:03&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl54_NameLink" href="http://%e6%97%a0" target="_blank">黄</a></div>
+				<div align=left>我想导出&#64;我的清单，包括好友ID、时间、LBS数据、正文、图片，除图片外一行一条，图片另存为对应行号为文件名的jpg文件。最好能根据时间筛选导出。等着急用，能否请阁下在原程序的基础上进行简化，我单位里要搞活动，急等上述技术实现，恳请阁下不吝赐教，请尽快回复为盼。我的微博名：e路龙腾<br>恭候大驾。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;黄&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e9%bb%84" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl54_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl54$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl54_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368177">#</a>&nbsp;<a name="368177"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-10 03:40&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl55_NameLink" target="_blank">在</a></div>
+				<div align=left>这次写入到50页就停了，前一版是HTML文件没有图片。&#64;weijin<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;在&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%9c%a8" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl55_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl55$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl55_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368178">#</a>&nbsp;<a name="368178"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-10 03:41&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl56_NameLink" target="_blank">在</a></div>
+				<div align=left>最早一版是可以同时备份图片的，就在HTML文件上。&#64;Aloong<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;在&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%9c%a8" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl56_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl56$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl56_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368179">#</a>&nbsp;<a name="368179"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-10 03:42&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl57_NameLink" target="_blank">在</a></div>
+				<div align=left>最早图片是可以备份的。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;在&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%9c%a8" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl57_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl57$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl57_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: 急！急！急！急！" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368421">#</a>&nbsp;<a name="368421"></a>急！急！急！急！&nbsp;2012-01-12 17:08&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl58_NameLink" target="_blank">jukka</a></div>
+				<div align=left>急！！！我导出TXT后，TXT文件里没有图片的连接，导出HTML后，页面里没有图片，是被新浪和谐了吗？麻烦大神尽快解决呀！！！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;jukka&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=jukka" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl58_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl58$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl58_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368497">#</a>&nbsp;<a name="368497"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-14 15:49&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl59_NameLink" target="_blank">杨小羊</a></div>
+				<div align=left>&#64;bleedingorange<br>同意哈，如果能够分段，这样就不会每次都是从头开始备份了。作者，期待你的辛苦作品，谢谢&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;杨小羊&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e6%9d%a8%e5%b0%8f%e7%be%8a" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl59_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl59$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl59_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368545">#</a>&nbsp;<a name="368545"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-15 11:50&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl60_NameLink" target="_blank">罗</a></div>
+				<div align=left>中间停一停，不行么？反正备份也不会很经常，慢一点无所谓。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;罗&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%bd%97" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl60_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl60$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl60_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368546">#</a>&nbsp;<a name="368546"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-15 11:51&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl61_NameLink" target="_blank">罗</a></div>
+				<div align=left>按时间分段，我会用excel自己衔接。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;罗&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%bd%97" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl61_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl61$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl61_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368619">#</a>&nbsp;<a name="368619"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-16 23:11&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl62_NameLink" target="_blank">xx</a></div>
+				<div align=left>下载信息的那个框框里是乱码，怎么解决啊？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;xx&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=xx" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl62_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl62$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl62_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368674">#</a>&nbsp;<a name="368674"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-17 22:52&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl63_NameLink" target="_blank">abc</a></div>
+				<div align=left>用户名或密码错误啊？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;abc&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=abc" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl63_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl63$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl63_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368712">#</a>&nbsp;<a name="368712"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-18 17:07&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl64_NameLink" target="_blank">猫三七</a></div>
+				<div align=left>这次是导入到50页就停了，在新浪微博上也是只能看到50页的东西……&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;猫三七&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%8c%ab%e4%b8%89%e4%b8%83" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl64_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl64$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl64_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368808">#</a>&nbsp;<a name="368808"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-21 10:44&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl65_NameLink" target="_blank">Nana</a></div>
+				<div align=left>我上次保存图片的时候，新浪服务器貌似出现了短暂的抽风，原始的图片PHP文件竟然显现在我眼前，当然了我立即保存了，如果博主需要的话我可以提供。<br>发现了一段代码：<br>（备注）<br>	/* shit code by wushen;<br>	if referer is 3g.sina.com.cn(wap)<br>	then start proxy policy<br>	*/&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Nana&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Nana" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl65_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl65$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl65_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368845">#</a>&nbsp;<a name="368845"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-23 16:37&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl66_NameLink" target="_blank">lyy</a></div>
+				<div align=left>我安装了之后发现登陆密码下面最大的那个窗口里显示的都是乱码...&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;lyy&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=lyy" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl66_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl66$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl66_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#368858">#</a>&nbsp;<a name="368858"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-01-24 09:42&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl67_NameLink" target="_blank">xiaohan</a></div>
+				<div align=left>你好 为什么总说我用户名密码错误啊 没错啊 用户名就是个邮箱啊。。咋回事儿呢&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;xiaohan&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=xiaohan" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl67_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl67$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl67_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369090">#</a>&nbsp;<a name="369090"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-01-31 16:06&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl68_NameLink" target="_blank">.</a></div>
+				<div align=left>到第50页的时候就没反应了&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;.&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=." target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl68_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl68$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl68_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369340">#</a>&nbsp;<a name="369340"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-03 21:29&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl69_NameLink" target="_blank">lzxgh621#163.com</a></div>
+				<div align=left>我登陆需要验证码，一直无法消除，无法备份，怎么办？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;lzxgh621#163.com&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=lzxgh621%23163.com" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl69_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl69$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl69_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369350">#</a>&nbsp;<a name="369350"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-02-03 23:04&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl70_NameLink" target="_blank">lynn</a></div>
+				<div align=left>下载信息的那个框框里是乱码，怎么解决啊？<br><br>我也是这个问题……&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;lynn&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=lynn" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl70_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl70$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl70_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369369">#</a>&nbsp;<a name="369369"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-02-04 14:51&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl71_NameLink" target="_blank">lynn</a></div>
+				<div align=left>我也是到50页就没反应了……&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;lynn&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=lynn" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl71_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl71$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl71_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369394">#</a>&nbsp;<a name="369394"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-05 12:37&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl72_NameLink" target="_blank">花开富贵老娘发飙</a></div>
+				<div align=left>到第五十页就停止不动了。，这是为啥呢？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;花开富贵老娘发飙&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e8%8a%b1%e5%bc%80%e5%af%8c%e8%b4%b5%e8%80%81%e5%a8%98%e5%8f%91%e9%a3%99" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl72_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl72$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl72_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: 停留在50页！" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369507">#</a>&nbsp;<a name="369507"></a>停留在50页！&nbsp;2012-02-07 10:23&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl73_NameLink" href="http://woniuren.tk" target="_blank">woniuren</a></div>
+				<div align=left>停留在50页！关闭后重新打开--输入用户名可以导出部分微博，但是都是收听的，共500条。按此操作也无法下载图片。<br>期待博主修复。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;woniuren&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=woniuren" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl73_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl73$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl73_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369600">#</a>&nbsp;<a name="369600"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-08 15:36&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl74_NameLink" target="_blank">nofumi</a></div>
+				<div align=left>停留在50頁就沒動靜(我有五千多條微博)<br>目前還在等待......<br><br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;nofumi&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=nofumi" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl74_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl74$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl74_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#369637">#</a>&nbsp;<a name="369637"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-02-09 09:50&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl75_NameLink" target="_blank">小宝</a></div>
+				<div align=left>网页格式的最多只能导出500条，txt格式的只能写入到50页就再也不动了。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;小宝&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%b0%8f%e5%ae%9d" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl75_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl75$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl75_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#370051">#</a>&nbsp;<a name="370051"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-02-15 23:28&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl76_NameLink" href="http://www.blogjava.net/1289122993/" target="_blank">笨笨要聪明点</a></div>
+				<div align=left>我的也只有10条，然后重复50次，LZ找到原因了吗？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;笨笨要聪明点&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%ac%a8%e7%ac%a8%e8%a6%81%e8%81%aa%e6%98%8e%e7%82%b9" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl76_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl76$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl76_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#370073">#</a>&nbsp;<a name="370073"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-16 10:35&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl77_NameLink" target="_blank">Jax</a></div>
+				<div align=left>老大，2012年1月份时还好着，现在当“下载完毕，是否&#64;他 告诉他你备份了他的微博”后，既没发&#64;他的微博，“导出数据”按钮也一直是灰色，重开程序数据为空。。<br><br>请问程序是不是锁死在“发&#64;他微博”那里了？。。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Jax&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Jax" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl77_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl77$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl77_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#370341">#</a>&nbsp;<a name="370341"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-20 13:39&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl78_NameLink" target="_blank">奇异果果</a></div>
+				<div align=left>你好。很感谢你给我们开发这个有用的微博备份工具。我不理解新浪为什么要给我们设置关卡不让我们备份。现在这个工具已经无法备份了。pagecount的数目都是0。你看有没有什么解决办法呢？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;奇异果果&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%a5%87%e5%bc%82%e6%9e%9c%e6%9e%9c" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl78_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl78$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl78_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#370560">#</a>&nbsp;<a name="370560"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-23 10:19&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl79_NameLink" target="_blank">回忆牢</a></div>
+				<div align=left>50页。。不动了&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;回忆牢&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%9b%9e%e5%bf%86%e7%89%a2" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl79_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl79$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl79_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#370810">#</a>&nbsp;<a name="370810"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-02-26 23:37&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl80_NameLink" target="_blank">0</a></div>
+				<div align=left>我现在微博只有100多条东西 又想删微博了 但是想先备份 谁知道一直停在“写入完成第50页”.... 到底怎么回事啊？？？急啊....&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;0&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=0" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl80_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl80$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl80_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#370937">#</a>&nbsp;<a name="370937"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-02-28 19:40&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl81_NameLink" target="_blank">risdia</a></div>
+				<div align=left>为什么框里的语言是乱码啊？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;risdia&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=risdia" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl81_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl81$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl81_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#371165">#</a>&nbsp;<a name="371165"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-03-03 13:13&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl82_NameLink" target="_blank">小丸子</a></div>
+				<div align=left>50页下不动了啊！！！！！！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;小丸子&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%b0%8f%e4%b8%b8%e5%ad%90" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl82_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl82$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl82_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#371427">#</a>&nbsp;<a name="371427"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-03-07 19:50&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl83_NameLink" target="_blank">ying</a></div>
+				<div align=left>始终停留在第一页，没反应&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;ying&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=ying" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl83_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl83$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl83_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#373594">#</a>&nbsp;<a name="373594"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-04-08 22:11&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl84_NameLink" target="_blank">cnwolf</a></div>
+				<div align=left>朋友能不能加个导出好友的功能啊，很需要把一组好友导出分享给其他朋友（方便一个圈子的朋友互相关注）&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;cnwolf&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=cnwolf" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl84_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl84$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl84_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#377160">#</a>&nbsp;<a name="377160"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-05-02 13:44&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl85_NameLink" target="_blank">6</a></div>
+				<div align=left>为什么下载了那么久已经停住了，好像已经完成了，为什么还不能按导出？？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;6&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=6" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl85_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl85$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl85_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#377477">#</a>&nbsp;<a name="377477"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-05-06 16:54&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl86_NameLink" href="http://ddd" target="_blank">dddd</a></div>
+				<div align=left>到250页的时候就有离奇失踪的页面了，后来就根本下不了了，晕&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;dddd&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=dddd" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl86_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl86$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl86_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#377988">#</a>&nbsp;<a name="377988"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-05-12 12:52&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl87_NameLink" href="http://R" target="_blank">R</a></div>
+				<div align=left>登陆不了，怎么备份，晕~~~&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;R&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=R" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl87_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl87$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl87_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#378140">#</a>&nbsp;<a name="378140"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-05-14 21:02&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl88_NameLink" target="_blank">L</a></div>
+				<div align=left>能不能导出微博收藏呀&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;L&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=L" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl88_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl88$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl88_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#378574">#</a>&nbsp;<a name="378574"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-05-19 19:36&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl89_NameLink" target="_blank">妞妞</a></div>
+				<div align=left>&#64;6<br>同样问题&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;妞妞&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e5%a6%9e%e5%a6%9e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl89_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl89$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl89_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#379505">#</a>&nbsp;<a name="379505"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-05-30 00:49&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl90_NameLink" href="http://%e4%ba%ba%e7%94%9f%e5%a6%82%e7%89%8c%e6%88%8f" target="_blank">王雄伟</a></div>
+				<div align=left>原有备份导出工具并曾使用过，但今天使用却出了问题：可以下载不能导出。原工具中无法浏览或者说改变路径，下载后“导出”两字白化无法点击。请指教。谢谢。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;王雄伟&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e7%8e%8b%e9%9b%84%e4%bc%9f" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl90_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl90$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl90_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#380705">#</a>&nbsp;<a name="380705"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-06-13 19:19&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl91_NameLink" target="_blank">Luna</a></div>
+				<div align=left>很可惜啊 ... 程式設計的很好<br>就因為新浪的新限制就被迫停用了．．．T___T<br>只怪自己”大安旨意” 沒定期備份 ^__^&quot;(汗)<br>這９個月的微博 現在想抓 也抓不回來了<br><br>謝謝 Aloong  一直以來的努力與付出喔！<br>同時也希望新浪可以改回來<br>好讓大家可以再用得到這個很好的備份工具！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Luna&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=Luna" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl91_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl91$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl91_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: 建议[未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#383515">#</a>&nbsp;<a name="383515"></a>建议[未登录]&nbsp;2012-07-19 16:22&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl92_NameLink" target="_blank">simon</a></div>
+				<div align=left>既然限制短时间内访问量的话，就降低访问频率吧。毕竟时间久一点总比不能用好。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;simon&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=simon" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl92_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl92$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl92_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#384269">#</a>&nbsp;<a name="384269"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-07-29 21:55&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl93_NameLink" href="http://chenlingling0527@tom.com" target="_blank">cll</a></div>
+				<div align=left>迫切需要导出私信记录，可以增加这个功能吗&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;cll&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=cll" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl93_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl93$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl93_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#384915">#</a>&nbsp;<a name="384915"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-08-06 14:58&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl94_NameLink" target="_blank">茄子</a></div>
+				<div align=left>不能用了啊，伤心ing~&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;茄子&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e8%8c%84%e5%ad%90" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl94_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl94$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl94_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#386345">#</a>&nbsp;<a name="386345"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-08-27 12:20&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl95_NameLink" target="_blank">zhou</a></div>
+				<div align=left>导出，但没见整理，然后就再也不动了。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;zhou&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=zhou" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl95_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl95$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl95_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#386800">#</a>&nbsp;<a name="386800"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-09-02 16:40&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl96_NameLink" target="_blank">jacky8hyf</a></div>
+				<div align=left>2012年9月2号测试似乎能用~我备份的是自己的微博，一千一百多条，似乎没有问题&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;jacky8hyf&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=jacky8hyf" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl96_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl96$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl96_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#388914">#</a>&nbsp;<a name="388914"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新][未登录]&nbsp;2012-10-01 15:15&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl97_NameLink" target="_blank">test</a></div>
+				<div align=left>博主你好，<br>我想请问为啥登录不了捏？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;test&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=test" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl97_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl97$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl97_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#391732">#</a>&nbsp;<a name="391732"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]&nbsp;2012-11-22 10:07&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl98_NameLink" target="_blank">肯</a></div>
+				<div align=left>下载完 就停住了  然后 没有 下一步了&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;肯&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e8%82%af" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl98_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl98$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl98_EditLink"></a>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class = "feedbackListSubtitle">
+			<div class="feedbacktitle"><a title="permalink: re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#391948">#</a>&nbsp;<a name="391948"></a>re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]<a name="Post"></a>&nbsp;2012-11-26 10:32&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl99_NameLink" target="_blank">雨哲</a></div>
+				<div align=left>楼主分享的代码很强大，希望楼主能够早日开发出备份私信的功能（按照每个私信联系人保存为一个文件），如果开发出来后能联系我就更好了，QQ：53152215，谢谢！祝楼主身体健康，快乐幸福！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;雨哲&quot;)" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.blogjava.net/comment?author=%e9%9b%a8%e5%93%b2" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl99_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl99$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl99_EditLink"></a>
+			</div>
+		</div>
+	<div id="AjaxHolder_Comments_BottomPager" style="text-align:right;margin-right:10px;margin-top:10px;"><style>.pager { text-align:right;	}</style><div class="pager">
+		评论共4页:&nbsp;1&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=2#pagedcomment">2</a>&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=3#pagedcomment">3</a>&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=4#pagedcomment">4</a>&nbsp;<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?page=2#pagedcomment">下一页</a>&nbsp;
+	</div></div>
+<style>
+td { font-size: 12px }
+.commentTextBox 
+{ 
+    font-family : Verdana; 
+    font-size: 13px;
+ }
+</style>
+<!--Beging Temp Save-->
+<STYLE>.userData { BEHAVIOR: url(#default#userdata) }
+	</STYLE>
+<DIV class="userData" id="CommentsPersistDiv"></DIV>
+
+<script type="text/javascript">
+function pageLoad()
+{
+    Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(handleInitializeRequest);
+    //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(handleEndRequest);
+}
+
+function handleInitializeRequest(sender, args)
+{
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    var eid = args.get_postBackElement().id;
+    if (eid.indexOf("DeleteLink")>0) 
+    {
+       args.get_postBackElement().innerHTML = "<font color='red'>正在删除...</font>";         
+    }    
+    else if (eid.indexOf("btnSubmit")>0) 
+    {
+       document.getElementById("AjaxHolder_PostComment_ltSubmitMsg").innerHTML="正在提交...";
+       document.getElementById("AjaxHolder_PostComment_btnSubmit").disabled = true;       
+    }   
+    else if(eid.indexOf("refreshList")>0)
+    {
+        document.getElementById("AjaxHolder_PostComment_refreshList").innerHTML="<font color='red'>正在刷新...</font>";
+    }
+   
+}	
+
+function TempSave(ElementID)
+{
+	try
+	{
+	CommentsPersistDiv.setAttribute("CommentContent",document.getElementById(ElementID).value);
+	CommentsPersistDiv.save("CommentXMLStore");
+	}
+	catch(ex)
+	{
+	}
+	
+}
+function Restore(ElementID)
+{
+	CommentsPersistDiv.load("CommentXMLStore");
+	document.getElementById(ElementID).value=CommentsPersistDiv.getAttribute("CommentContent");
+}	
+			
+			
+</script>
+<!--Ene TempSave-->
+<div id="divRefreshComments" style="text-align:right;margin-right:10px;margin-bottom:5px;font-size:12px"><a href="/RequireRegister.aspx">新用户注册</a>&nbsp;&nbsp;<a id="AjaxHolder_PostComment_refreshList" href="javascript:__doPostBack('AjaxHolder$PostComment$refreshList','')">刷新评论列表</a>&nbsp;&nbsp;</div>
+<div class="commentform">
+<span id="AjaxHolder_PostComment_ltSubmitMsg"><font color="Red"></font></span>
+<br />
+<a name="Feedback"></a>
+	<TABLE cellSpacing="1" cellPadding="1" border="0">	
+		<tr>
+		<td id="AjaxHolder_PostComment_tdOnCommentForm" colspan="3" style="line-height:1.5">
+		<a href="http://springonechina.cloudfoundry.com/register?code=Xcq3Z1" target="_blank">SpringOne 开发者大会（北京，12月7日-8日，免费）</a><br/>
+		<!--<a href="http://zt.cnblogs.com/training/2012/" target="_blank">国家职业资格证书-Java高级程序设计员免费培训（上海）</a>-->
+		<!--<div>
+		技术专题：<br/>
+		<a href="http://kb.cnblogs.com/zt/jquery/" title="jQuery" target="_blank">jQuery</a>&nbsp; &nbsp;<a href="http://kb.cnblogs.com/zt/android/" title="Android" target="_blank">Android</a>&nbsp; &nbsp;<a href="http://kb.cnblogs.com/zt/ipad/" title="iPad" target="_blank">iPad</a>
+		</div>-->
+		</td>
+	
+		</tr>
+		<div id="AjaxHolder_PostComment_divCommnentArea">
+		<TR>
+			<TD colSpan="3"></TD>
+		</TR>
+		<TR>
+			<TD width="75"></TD>
+			<TD></TD>
+			<TD></TD>
+		</TR>
+		<TR>
+			<TD></TD>
+			<TD colSpan="2">
+			<a href="http://www.cnblogs.com" target="_blank">博客园</a>&nbsp;  <a href="http://q.cnblogs.com/" target="_blank">博问</a>&nbsp; <a href="http://news.cnblogs.com" target="_blank">IT新闻</a>&nbsp; <!--<a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a>&nbsp;  <a href="http://a4.yeshj.com/rd/36007/" target="_blank">学英语</a>&nbsp;  --><a href="http://job.cnblogs.com/cate-java_programmer/" target="_blank">Java程序员招聘</a>
+			</TD>
+		</TR>
+		<TR>
+			<TD width="55">标题</TD>
+			<TD><input name="AjaxHolder$PostComment$tbTitle" type="text" value="re: [发布] 新浪微博备份导出工具, 下载并导出任意用户的全部消息到多种格式 -- V2.5(使用说明+截图)[2011-09-22更新]" id="AjaxHolder_PostComment_tbTitle" class="commenttb" style="width:320" /></TD>
+			<TD>&nbsp;</TD>
+		</TR>
+		<TR>
+			<TD>姓名</TD>
+			<TD><input name="AjaxHolder$PostComment$tbName" type="text" id="AjaxHolder_PostComment_tbName" class="commenttb" style="width:320" /></TD>
+			<TD>&nbsp;</TD>
+		</TR>
+		<TR>
+			<TD>主页</TD>
+			<TD><input name="AjaxHolder$PostComment$tbUrl" type="text" id="AjaxHolder_PostComment_tbUrl" class="commenttb" style="width:320" /></TD>
+			<TD><FONT face="宋体"></FONT></TD>
+		</TR>
+		<tr>
+			<td align="left" colSpan="3">
+				<table id="AjaxHolder_PostComment_tbCaptchaImage" class="CommentForm" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td colspan="3">
+							
+							<span id="AjaxHolder_PostComment_lblImage"><b><font color="Red"></font></b></span>
+						</td>
+		</tr>
+		<tr>
+			<td width="78">验证码</td>
+			<td><input name="AjaxHolder$PostComment$CodeNumberTextBox" type="text" id="AjaxHolder_PostComment_CodeNumberTextBox" />*&nbsp;&nbsp;<img src="http://www.blogjava.net/Modules/CaptchaImage/JpegImage.aspx?cacheid=20121126161118"/></td>
+			<td align="left"></td>
+		</tr>
+	</table>
+	
+			</td>
+		</tr>
+		<TR>
+			<TD colSpan="3">内容(请不要发表任何与政治相关的内容)
+				&nbsp;<BR>
+				<textarea name="AjaxHolder$PostComment$tbComment" rows="10" cols="50" id="AjaxHolder_PostComment_tbComment" class="commentTextBox" onkeydown="ctlent(event,'AjaxHolder_PostComment_tbComment')" style="Width:480;Height:220"></textarea></TD>
+		</TR>
+		<TR>
+			<TD colSpan="3">
+		<span id="AjaxHolder_PostComment_Message"><font color="Red"></font></span>
+		</td>
+		<TR>
+			<TD colSpan="3"><input id="AjaxHolder_PostComment_chkRemember" type="checkbox" name="AjaxHolder$PostComment$chkRemember" checked="checked" tabindex="-1" /><label for="AjaxHolder_PostComment_chkRemember">Remember Me?</label></TD>
+		</TR>
+		<TR>
+			<TD height="23"><input type="submit" name="AjaxHolder$PostComment$btnSubmit" value="提交" onclick="TempSave('AjaxHolder_PostComment_tbComment');WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;AjaxHolder$PostComment$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="AjaxHolder_PostComment_btnSubmit" class="commentButton" />
+				</TD>
+			<td colSpan="2" height="23">&nbsp;
+				<a id="AjaxHolder_PostComment_lnkLogin" href="http://www.blogjava.net/login.aspx?ReturnURL=http://www.blogjava.net/jayslong/archive/2010/11/17/sina_weibo_backup.html&amp;SourceURL=/jayslong/archive/2010/11/17/sina_weibo_backup.html">登录</a>&nbsp;&nbsp;<!--<a id="AjaxHolder_PostComment_linkLoginComment" OnClick="if(document.getElementById('AjaxHolder_PostComment_tbComment').value != '') return confirm('未提交的评论内容将会丢失, 你真的要进入高级评论吗?');" href="http://www.blogjava.net/jayslong/archive/2010/11/17/sina_weibo_backup.html?login=1#Post">使用高级评论</a>&nbsp;&nbsp;<a href="http://www.blogjava.net/RequireRegister.aspx">新用户注册</a>&nbsp;&nbsp;<A href="#Top">返回页首</A>&nbsp;&nbsp;<a id="AjaxHolder_PostComment_lbRestore" OnClick="Restore('AjaxHolder_PostComment_tbComment'); return false;" href="/jayslong/archive/2010/11/17/sina_weibo_backup.html#Post">恢复上次提交</a>&nbsp;&nbsp;-->&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+		</TR>
+		<TR>
+			<TD colSpan="3"><label class="CtrlEnter">[使用Ctrl+Enter键可以直接提交]</label></TD>
+		</TR>
+		</div>
+		
+		<TR>
+			<TD colSpan="3"><!--该文被作者在 2012-08-22 05:27 编辑过--></TD>
+		</TR>
+		<!--
+		<TR>
+			<TD colSpan="3" height="5"></TD>
+		</TR>	
+		-->	
+		<TR>
+		<TD colSpan="3">
+		
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/1090369/blogjava_blogpost_bottom', [300, 250], 'div-gpt-ad-1343724280665-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+
+<!-- blogjava_blogpost_bottom -->
+<div id='div-gpt-ad-1343724280665-0' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1343724280665-0'); });
+</script>
+</div>
+<br/>
+
+		</TD>
+		</TR>
+		<tr>			
+		<td colspan="3">
+		<div id="itnews_block" style="line-height:180%;" class="other_info_list">IT新闻：<br/>· <a href="http://news.cnblogs.com/n/164965/" target="_blank">iOS在网购流量中份额19.5% 是Android逾3倍</a><br/>· <a href="http://news.cnblogs.com/n/164964/" target="_blank">Facebook总部张贴海报鼓励员工转用Android手机</a><br/>· <a href="http://news.cnblogs.com/n/164963/" target="_blank">英媒报道NASA曾斥巨资建登月模拟器</a><br/>· <a href="http://news.cnblogs.com/n/164962/" target="_blank">人工智能识别抽象艺术激发人类情感的原因</a><br/>· <a href="http://news.cnblogs.com/n/164961/" target="_blank">联通推出手机支付新品 可在POS机上刷手机付费</a><br/></div><div id="cnblogs_posts" style="line-height:180%;">博客园首页随笔：<br/>· <a href="http://www.cnblogs.com/58top/archive/2012/11/26/a-list-of-jquery-pdf-viewers-available-at-the-moment.html" target="_blank">在线浏览PDF文件的实用jquery插件推荐</a><br/>· <a href="http://www.cnblogs.com/majiang/archive/2012/11/26/2789212.html" target="_blank">OutputCache缓存设置 条件 Cookies设置缓存无效</a><br/>· <a href="http://www.cnblogs.com/TrueElement/archive/2012/11/26/2789186.html" target="_blank">DSP F2812的中断</a><br/>· <a href="http://www.cnblogs.com/iTBear/archive/2012/11/26/2789151.html" target="_blank">Process Explorer使用教程</a><br/>· <a href="http://www.cnblogs.com/xuhongchuan/archive/2012/11/26/2789120.html" target="_blank">【计算机的物理实现】什么是半导体</a><br/></div><div id="job_block" style="line-height:180%;">知识库：<br/>· <a href="http://kb.cnblogs.com/page/158568/" target="_blank">HTTP服务七层架构技术探讨</a><br/>· <a href="http://kb.cnblogs.com/page/158829/" target="_blank">HTTP协议之基本认证</a><br/>· <a href="http://kb.cnblogs.com/page/164879/" target="_blank">17家中国初创公司的失败史</a><br/>· <a href="http://kb.cnblogs.com/page/164877/" target="_blank">高斯模糊的算法</a><br/>· <a href="http://kb.cnblogs.com/page/164874/" target="_blank">回归初心止拖延</a><br/></div>
+		</td>
+		</tr>
+		<TR>
+		<TD colSpan="3"></TD>
+		</TR>
+		<TR>
+			<TD colSpan="3" height="1">网站导航:<div id="blogsite">
+			<a href="http://www.cnblogs.com" title="程序员的网上家园">博客园</a>&nbsp;&nbsp;
+			<a href="http://news.cnblogs.com">IT新闻</a>&nbsp;&nbsp;
+			<a href="http://kb.cnblogs.com">知识库</a>&nbsp;&nbsp;
+			<a href="http://www.cppblog.com">C++博客</a>&nbsp;&nbsp;
+			<a href="http://job.cnblogs.com">程序员招聘</a>&nbsp;&nbsp;
+			<a href="/jayslong/archive/2010/11/17/sina_weibo_backup.html?opt=admin">管理</a>
+			</div>
+		</TD>
+		</TR>
+		<TR>
+			<TD colSpan="3" height="5">
+<div id="divRelativePosts">
+相关文章:
+	
+			<ul style="margin-top:0px;padding-left:0px;">
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl01_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2012/08/22/fanfou_backup_js_script.html">用一个js脚本备份饭否消息</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl02_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/12/10/jdk_tomcat_mysql_setting_up_for_jsp_in_linux_fedora.html">在Fedora Linux上快速部署搭建JDK, Tomcat, MySQL的JSP开发演示环境流程记录教程.</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl03_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/10/16/qq_2012_offer_experience.html">腾讯2012校园招聘面试面经,技术类,应用软件开发,Java,移动终端方向可参考.</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl04_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/17/how_to_modify_system_apps_in_android_source_code.html">分享在Linux下编译Android源代码并修改调试系统自带应用的方法</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl05_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/12/fix_the_problem_that_android_source_code_wont_compile_in_ubuntu_11_04.html">解决用 Ubuntu 11.04 编译 Android 源码时候出现的"field 'arch' has incomplete type"错误</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl06_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/11/java_and_javascript_interact_in_android_webview.html">Android中WebView载入本地HTML代码并实现Java与JavaScript交互的例子</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl07_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/05/11/root_android_emulator_to_push_file_into_system_folder.html">ROOT Android模拟器, push文件到system下文件夹权限和空间问题的解决.</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl08_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/27/jquery_reply_page_divide_and_ad_clear_in_blogjava.html">分享用JQuery在BlogJava中实现评论的前端分页和清理广告的js代码.</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl09_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/21/embeded_flag_expressions_in_java_regex.html">java正则表达式中的Embeded Flag参数</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl10_Hyperlink1" href="http://www.blogjava.net/jayslong/archive/2011/04/21/convert_xls_and_xlsx_to_csv.html">分享用Java将Excel的xls和xlsx文件转换成csv文件的方法, XLS2CSV, XLSX2CSV</a>
+			</li>
+		
+			</ul>
+		
+</div>
+</TD>
+		</TR>	
+		<TR>
+			<TD colSpan="3">&nbsp;</TD>
+		</TR>
+		<TR>
+			<TD colSpan="3" height="5"></TD>
+		</TR>
+		<TR>
+			<TD colSpan="3">
+				</TD>
+		</TR>		
+	</TABLE>	
+</div>
+
+
+</div>
+
+				
+	
+<!--done-->
+<div class="footer">
+	
+	Copyright &copy;2012 Aloong Powered by: <a href="http://www.cnblogs.com" class=footerlink>博客园</a> 模板提供：<a href="http://blog.hjenglish.com" class=footerlink>沪江博客</a><br>
+</div>
+</div>
+
+
+<!-- 51.La统计代码开始 -->
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/3622856.js"></script>
+<noscript><a href="http://www.51.la/?3622856" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/3622856.asp" style="border:none" /></a></noscript>
+<!-- 51.La统计代码结束 -->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb6.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(34259,1,"www");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+// <!-- 调用清理页面 -->
+	clearPage();
+
+// <!-- 直接在首页显示文章 -->
+	$("a:contains('阅读全文')").click(function(e){
+		e.preventDefault();
+		$(e.target).hide();
+		var url = e.target.href;
+		$(e.target).next().remove();
+		$(e.target).after("<div>loading...</div>");
+		$(e.target).next().after("<div></div>");
+		$(e.target).next().next().hide();
+		$(e.target).next().next().load(url+" .post", function(){
+			$(e.target).next().remove();
+			$("div a[href=#Post]").attr("href",url+"#Post");
+			$(e.target).next().slideDown(5000);
+		});
+	});
+// <!-- 直接在首页显示文章结束 -->
+
+// <!-- 调用分页 -->
+	invokeNavBar();
+
+});
+
+
+
+// <!-- 分页开始 -->
+var pageItemLimit = 10;
+var feedBackList = $(".feedbackListSubtitle");
+var feedBackCount = feedBackList.length;
+var pageCount = parseInt(feedBackCount/pageItemLimit)+1;
+var pageIndex = pageCount==11?10:pageCount;
+
+function switchPage(){
+	var loopItemIndex = 0;
+	var startItemIndex = (pageIndex-1)*pageItemLimit;
+	var endItemIndex = pageIndex*pageItemLimit;
+	feedBackList.each(function(){
+		if(loopItemIndex <startItemIndex || loopItemIndex >=endItemIndex)
+		{
+			$(this).hide();
+		}else
+		{
+			$(this).show();
+		}
+		loopItemIndex ++;
+		if(loopItemIndex ==feedBackCount)
+		{
+			return;
+		}
+	});
+	
+}
+
+function refreshNav(){
+	$(".pageNavBar").remove();
+	$("#CommentsPersistDiv").before(function(){
+		var pageString = "<div class='pageNavBar'>";
+		if(pageIndex>1)
+		{
+			var pageString = pageString+ "<a class='page' onclick='turnPage("+(pageIndex-1)+")' href='#'>上一页</a> ";
+		}
+		for(i = 1; i<=pageCount; i++)
+		{
+			if(i==11)break;
+			if(i==pageIndex)
+			{
+				pageString = pageString+" "+i+" ";
+				continue;
+			}
+			pageString = pageString+"<a class='page' onclick='turnPage("+i+")' href='#'>"+i+"</a> ";
+		}
+		if(pageIndex<pageCount && pageIndex!=10)
+		{
+			pageString = pageString+" <a class='page' onclick='turnPage("+(pageIndex+1)+")' href='#'>下一页</a>";
+		}
+		pageString = pageString+"</div>";
+		return pageString;
+	});
+
+	$(".feedbackItem").eq(0).before(function(){
+		var pageString = "<div class='pageNavBar'>";
+		if(pageIndex>1)
+		{
+			var pageString = pageString+ "<a class='page' onclick='turnPage1("+(pageIndex-1)+")' href='#'>上一页</a> ";
+		}
+		for(i = 1; i<=pageCount; i++)
+		{
+			if(i==11)break;
+			if(i==pageIndex)
+			{
+				pageString = pageString+" "+i+" ";
+				continue;
+			}
+			pageString = pageString+"<a class='page' onclick='turnPage1("+i+")' href='#'>"+i+"</a> ";
+		}
+		if(pageIndex<pageCount && pageIndex!=10)
+		{
+			pageString = pageString+" <a class='page' onclick='turnPage1("+(pageIndex+1)+")' href='#'>下一页</a>";
+		}
+		pageString = pageString+"</div>";
+		return pageString;
+	});
+
+	$(".pageNavBar").eq(0).append(" <a href='#' onclick='toReply()'><span style='font-size: 14pt;'>回复</span></a>");
+
+}
+
+function toReply(){
+	$("html,body").animate({scrollTop: $("td:contains('标题')").eq(0).offset().top-20}, 1000);
+	$("html,body").animate({scrollTop: $("td:contains('标题')").eq(0).offset().top-30}, 200);
+	$("html,body").animate({scrollTop: $("td:contains('标题')").eq(0).offset().top-10}, 200);
+	$("html,body").animate({scrollTop: $("td:contains('标题')").eq(0).offset().top-20}, 200);
+
+}
+
+function turnPage(toPageIndex){
+	pageIndex = toPageIndex;
+	switchPage();
+	refreshNav();
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-50}, 1000);
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-60}, 200);
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-40}, 200);
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-50}, 200);
+	return false;
+}
+
+function turnPage1(toPageIndex){
+	pageIndex = toPageIndex;
+	switchPage();
+	refreshNav();
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-40}, 200);
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-60}, 200);
+	$("html,body").animate({scrollTop: $(".pageNavBar").eq(0).offset().top-50}, 200);
+	return false;
+}
+
+function invokeNavBar(){
+	if(pageCount>1)
+	{
+		switchPage();
+		refreshNav();
+	}
+}
+// <!-- 分页结束 -->
+
+
+// <!-- 清理页面开始 -->
+function clearPage(){
+	$("tbody tr:first-child").remove();
+	$("div:contains('推荐职位')").parent("td").remove();
+	$("td[colspan='2']").remove();
+	$("td:contains('网站导航:')").parent("tr").prev().remove();
+	$("td:contains('网站导航:')").parent("tr").prev().remove();
+	$("td:contains('网站导航:')").parent("tr").prev().remove();
+	$("td:contains('网站导航:')").parent("tr").remove();
+}
+// <!-- 清理页面结束 -->
+
+</script>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+    <script type="text/javascript" src="/script/ShowHidden.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-476124-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</body>
+</html>
